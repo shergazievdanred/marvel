@@ -1,15 +1,10 @@
 import { Component } from "react";
-import ErrorMessage from "../errorMessage/errorMessage";
-
+import ErrorMessage from "../errorMessage/ErrorMessage";
 
 class ErrorBoundary extends Component {
     state = {
         error: false
     }
-    // альтернатива для componentDidCatch
-    // static getDerivateStateError(error) {
-    //     return {error: true};
-    // }
 
     componentDidCatch(error, errorInfo) {
         console.log(error, errorInfo);
@@ -19,7 +14,7 @@ class ErrorBoundary extends Component {
     }
 
     render() {
-        if (this.state.error){
+        if (this.state.error) {
             return <ErrorMessage/>
         }
 
